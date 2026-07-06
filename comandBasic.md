@@ -33,6 +33,92 @@ git clone git@github.com:usuario/proyecto.git
 # Ver estado actual
 git status
 
+##############
+ Ejemplo 1: Crear un proyecto desde cero y hacer el primer envíoImagina que vas a iniciar una nueva página web en tu computadora. Los comandos se ejecutan en este orden dentro de tu terminal:
+ 
+ git initResultado: Creas el repositorio. Git empieza a vigilar la carpeta de tu proyecto.
+ 
+ git statusResultado: Git te avisa que creaste un archivo llamado index.html pero que aún no está guardado en el historial.
+ 
+ git add index.htmlResultado: Preparas el archivo para la foto. Si tienes muchos archivos nuevos, usas git add ..
+ 
+ git commit -m "Mi primer commit: estructura inicial de la web"Resultado: Guardas la foto en el historial con ese mensaje descriptivo.
+
+#######3
+Ejemplo 2: Trabajar en equipo (Subir y bajar cambios)   
+
+git clone https://github.comResultado: Descargas una copia exacta de todo el proyecto a tu computadora para empezar a trabajar.
+
+git clone https://github.comResultado: Descargas una copia exacta de todo el proyecto a tu computadora para empezar a trabajar.
+
+(Haces tus cambios en el código y guardas con git add y git commit)
+
+git pullResultado: Regla de oro antes de subir algo. 
+
+Descargas los cambios que tus compañeros hayan subido mientras tú trabajabas, evitando pisar el trabajo de otros.
+
+git pushResultado: Subes tus nuevos cambios a GitHub para que el resto del equipo pueda verlos y usarlos.
+
+######
+Ejemplo 3: Crear una función nueva sin romper lo que ya funcionaQuieres probar un diseño de botón nuevo pero no quieres arruinar la página web que ya está funcionando en producción (rama main).
+
+git branch nuevo-botonResultado: Creas una línea de tiempo paralela llamada "nuevo-boton".
+
+git checkout nuevo-botonResultado: Te mudas a esa línea de tiempo. Todo lo que hagas aquí no afectará a la rama principal.
+
+(Modificas el diseño del botón, haces git add . y luego git commit -m "Diseño de botón moderno")
+
+git checkout main
+
+##  1. Cambiarlo de forma GLOBAL (Para todos tus proyectos futuros)Si quieres que cada vez que uses git init la rama por defecto se llame main en lugar de master, ejecuta este comando una sola vez en tu terminal:
+
+git config --global init.defaultBranch main)
+
+Cambiarlo en un proyecto LOCAL (Que no has subido a internet)Si estás trabajando en tu computadora y tu rama actual se llama master, cámbiala usando la bandera -m (move/renombrar):Asegúrate de estar posicionado en la rama master:
+
+git checkout master
+Usa el código con precaución.Renombra la rama a main:
+
+git branch -m master main
+
+Cambiarlo en un proyecto REMOTO (Que ya está en GitHub/GitLab)Si el repositorio ya existe en internet con la rama master, debes renombrarla tanto en tu computadora como en el servidor siguiendo estos pasos cronológicamente:Renombra tu rama local (igual que en el paso anterior):
+
+git branch -m master main
+
+Usa el código con precaución.Sube la nueva rama main al servidor y establece el rastreo:
+
+git push -u origin main
+
+Usa el código con precaución.Cambia la rama por defecto en la interfaz web:Entra a tu repositorio en GitHub/GitLab desde el navegador.Ve a Settings (Configuración) -> Branches (Ramas).Cambia la rama por defecto ("Default branch") de master a main y guarda los cambios.Borra la vieja rama master del servidor escribiendo en tu terminal:
+
+git push origin --delete master
+
+Resultado: Regresas a la versión segura y estable de tu proyecto. El nuevo botón "desaparece" momentáneamente porque está a salvo en su propia rama.
+########
+4: Revisar qué has hechoLlevas horas programando y no recuerdas qué archivos modificaste o qué hiciste ayer.
+
+git status
+
+Resultado: Te muestra una lista en rojo con los archivos que modificaste hoy y no has guardado.
+
+git log --onelineResultado: Te muestra una lista compacta y limpia (un commit por línea) de los últimos cambios guardados en los días anteriores.
+
+###########
+Cómo se usa git merge (Paso a Paso)Imagina que creaste una rama llamada nuevo-boton, terminaste el diseño y ahora quieres integrarlo a tu rama principal main.Regresa a la rama que va a recibir los cambios (el destino):
+
+git checkout main
+
+Usa el código con precaución.Asegúrate de tener lo último del servidor (por si tus compañeros subieron algo):
+
+git pull
+
+Usa el código con precaución.Fusiona la rama secundaria dentro de tu rama actual:
+
+git merge nuevo-boton
+
+Usa el código con precaución.¡Listo! Los cambios de nuevo-boton ahora forman parte de main.
+
+########3
 # Añadir archivos al staging
 git add archivo.txt          # un archivo específico
 git add .                    # todo (cuidado)
@@ -48,3 +134,8 @@ git commit -m "Mensaje claro y descriptivo"
 # Ver historial
 git log --oneline --graph --all
 git log -p                   # ver cambios detallados
+
+git push: Sube tus commits locales confirmados al repositorio remoto para compartirlos con el equipo.
+
+git pull: Descarga y fusiona automáticamente los últimos cambios del repositorio remoto en tu rama local actual.
+
