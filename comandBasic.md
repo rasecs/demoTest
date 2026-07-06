@@ -68,7 +68,11 @@ git checkout nuevo-botonResultado: Te mudas a esa línea de tiempo. Todo lo que 
 
 (Modificas el diseño del botón, haces git add . y luego git commit -m "Diseño de botón moderno")
 
-git checkout main
+listar las ramas 
+ git branch
+  con * estara marcada la rama que estamos actualmente
+
+git checkout main  ##rama principal
 
 ##  1. Cambiarlo de forma GLOBAL (Para todos tus proyectos futuros)Si quieres que cada vez que uses git init la rama por defecto se llame main en lugar de master, ejecuta este comando una sola vez en tu terminal:
 
