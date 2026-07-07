@@ -278,3 +278,4 @@ ara solucionar este conflicto y poder subir tu código, debes traer los archivos
    * Al ejecutar el comando anterior, es muy probable que se abra un editor de texto en la terminal (como Vim o Nano) pidiéndote un mensaje para el "Merge".
    * **Si se abre Vim (pantalla con líneas amarillas o texto raro):** Presiona la tecla `Esc`, luego escribe `:wq` y presiona `Enter` para guardar y salir.
    * **Si estás en VS Code:** Simplemente cierra la pestaña del mensaje que se haya abierto.
+ * 
